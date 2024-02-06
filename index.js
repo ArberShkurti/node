@@ -10,6 +10,18 @@
 //     console.log ("me i madh"); 
 // }
 
-for (i=0; i<10; i++){
- console.log((i));
-}
+// for (i=0; i<10; i++){
+//  console.log((i));
+// }
+
+
+
+const sayHi = require('./utilities')
+const name = require('./name')
+
+console.log(name)
+
+
+sayHi(name1);
+sayHi("anna");
+sayHi(name2);
