@@ -16,12 +16,16 @@
 
 
 
-const sayHi = require('./utilities')
-const name = require('./name')
+// const sayHi = require('./utilities')
+// const name = require('./name')
 
-console.log(name)
+// console.log(name)
 
 
-sayHi(name1);
-sayHi("anna");
-sayHi(name2);
+// sayHi(name1);
+// sayHi("anna");
+// sayHi(name2);
+
+const os = require ('os');
+
+console.log(os.arch());
