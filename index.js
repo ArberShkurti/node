@@ -26,6 +26,16 @@
 // sayHi("anna");
 // sayHi(name2);
 
-const os = require ('os');
+const httpja = require ('http');
 
-console.log(os.arch());
+const server = httpja.createServer((request, response)=>{
+   if (request.url === "/") {
+    response.end("welcome again");
+   } else {
+    response.end(`<p> back to <a href="/">home</a>`);
+   }
+})
+
+server.listen(3000);
+
+// console.log(httpja());
