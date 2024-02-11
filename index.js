@@ -49,10 +49,17 @@
 // const { loadavg } = require('os');
 // const { log } = require('util');
 
-const customEmitter = new EventEmitter();
+// const customEmitter = new EventEmitter();
 
-customEmitter.on('sms', ()=>{
-    console.log('started');
-})
+// customEmitter.on('sms', ()=>{
+//     console.log('started');
+// })
 
-customEmitter.emit('sms');
+// customEmitter.emit('sms');
+
+
+const {writeFileSync} = require('fs');
+
+for (let i=0; i<10; i++ ) {
+    writeFileSync('./filegrande.txt', `cio riga numero ${i}\n`, {flag: 'a'});
+}
