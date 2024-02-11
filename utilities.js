@@ -4,4 +4,4 @@ function sayHi(name) {
 }
 
 
-module.exports = sayHi
+module.exports = sayHi;
