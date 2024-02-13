@@ -69,3 +69,24 @@
 // post ( te dergosh te dhena);
 // put (modifikosh te dhena);
 // delete (te fshish te dhena);
+
+
+const express = require ('express')
+const app = express()
+
+app.get('/',  (req, res)=> {
+    res.send('Hello World')
+  })
+
+app.get('/about', (req, res)=>{
+    res.send('Lorem ipsum text')
+})
+
+app.get ('/contact', (req, res)=>{
+    res.send('nr i tel 069...')
+})
+app.all('*', (req, res)=> {
+    res.send("<h1>Doesn't exist<h1/>")
+})
+
+  app.listen(5000)
