@@ -58,8 +58,14 @@
 // customEmitter.emit('sms');
 
 
-const {writeFileSync} = require('fs');
+// const {writeFileSync} = require('fs');
 
-for (let i=0; i<10; i++ ) {
-    writeFileSync('./filegrande.txt', `cio riga numero ${i}\n`, {flag: 'a'});
-}
+// for (let i=0; i<10; i++ ) {
+//     writeFileSync('./filegrande.txt', `cio riga numero ${i}\n`, {flag: 'a'});
+// }
+
+
+// get ( te marresh te dhena );
+// post ( te dergosh te dhena);
+// put (modifikosh te dhena);
+// delete (te fshish te dhena);
