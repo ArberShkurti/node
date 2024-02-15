@@ -71,22 +71,33 @@
 // delete (te fshish te dhena);
 
 
+
+
+// app.get('/',  (req, res)=> {
+//     res.send('Hello World')
+//   })
+
+// app.get('/about', (req, res)=>{
+//     res.send('Lorem ipsum text')
+// })
+
+// app.get ('/contact', (req, res)=>{
+//     res.send('nr i tel 069...')
+// })
+// app.all('*', (req, res)=> {
+//     res.send("<h1>Doesn't exist<h1/>")
+// })
+
+
+
+
+
 const express = require ('express')
 const app = express()
+const {persone} = require('./persone')
 
-app.get('/',  (req, res)=> {
-    res.send('Hello World')
-  })
-
-app.get('/about', (req, res)=>{
-    res.send('Lorem ipsum text')
+app.get('/', (req, res) => {
+    res.json(persone)
 })
 
-app.get ('/contact', (req, res)=>{
-    res.send('nr i tel 069...')
-})
-app.all('*', (req, res)=> {
-    res.send("<h1>Doesn't exist<h1/>")
-})
-
-  app.listen(5000)
+app.listen(5000)    
