@@ -97,6 +97,10 @@ const app = express()
 const {persone} = require('./persone')
 
 app.get('/', (req, res) => {
+    res.send("<h1>Home Page</h1><a href='/persone'>Go to persone'<a/>")
+})
+
+app.get('/persone', (req, res) => {
     res.json(persone)
 })
 
