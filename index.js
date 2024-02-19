@@ -127,15 +127,22 @@
 
 // app.listen(5000)    
 
-const express = require('expres')
+const express = require('express')
 const app = express()
 
-app.get ('/', (req, res)=>{
+const middlewareProva = (req, res, next) => {
+    const {method, url} = req
+    const time = new Date().getMinutes
+    console.log(method, url, time)
+}
+
+app.get ('/', middlewareProva, (req, res)=>{
     res.send("homepage")
 })
 
-app.get ('/about', (req, res)=>{
+app.get ('/about', middlewareProva, (req, res)=>{
     res.send("about")
 })
 
 app.listen(5000)
+
