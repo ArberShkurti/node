@@ -92,36 +92,50 @@
 
 
 
-const express = require ('express')
+// const express = require ('express')
+// const app = express()
+// const {persone} = require('./persone')
+
+// app.get('/', (req, res) => {
+//     res.send("<h1>Home Page</h1><a href='/persone'>Go to persone'<a/>")
+// })
+
+// app.get('/persone', (req, res) => {
+//     const nuovaPersone = persone.map((persona)=>{
+//         const{nome, cognome, eta} = persona
+//         return{nome, cognome, eta}
+//     })
+//     res.json(nuovaPersone)
+// })
+
+// app.get('/persone/:id', (req, res)=>{
+//     console.log(req.params);
+// const {id} = req.params
+// const persona = persone.find((persona) => persona.id === id)
+
+// if (!persona){
+//     return res.status(404).json({messaggio: "non trovato", code: 404})
+// }
+
+// res.json(persona)
+// })
+
+// app.get('/persone/search', (req, res)=>{
+//     console.log(req.query);
+//     res.send("hello")
+// })
+
+// app.listen(5000)    
+
+const express = require('expres')
 const app = express()
-const {persone} = require('./persone')
 
-app.get('/', (req, res) => {
-    res.send("<h1>Home Page</h1><a href='/persone'>Go to persone'<a/>")
+app.get ('/', (req, res)=>{
+    res.send("homepage")
 })
 
-app.get('/persone', (req, res) => {
-    const nuovaPersone = persone.map((persona)=>{
-        const{nome, cognome, eta} = persona
-        return{nome, cognome, eta}
-    })
-    res.json(nuovaPersone)
+app.get ('/about', (req, res)=>{
+    res.send("about")
 })
 
-app.get('/persone/:id', (req, res)=>{
-    console.log(req.params);
-const {id} = req.params
-const persona = persone.find((persona) => persona.id === id)
-
-if (!persona){
-    return res.status(404).json({messaggio: "non trovato", code: 404})
-}
-
-res.json(persona)
-})
-
-app.get('/persone/search', (req, res)=>{
-    console.log(req.query);
-})
-
-app.listen(5000)    
+app.listen(5000)
