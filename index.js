@@ -101,7 +101,27 @@ app.get('/', (req, res) => {
 })
 
 app.get('/persone', (req, res) => {
-    res.json(persone)
+    const nuovaPersone = persone.map((persona)=>{
+        const{nome, cognome, eta} = persona
+        return{nome, cognome, eta}
+    })
+    res.json(nuovaPersone)
+})
+
+app.get('/persone/:id', (req, res)=>{
+    console.log(req.params);
+const {id} = req.params
+const persona = persone.find((persona) => persona.id === id)
+
+if (!persona){
+    return res.status(404).json({messaggio: "non trovato", code: 404})
+}
+
+res.json(persona)
+})
+
+app.get('/persone/search', (req, res)=>{
+    console.log(req.query);
 })
 
 app.listen(5000)    
