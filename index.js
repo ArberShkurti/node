@@ -129,20 +129,24 @@
 
 const express = require('express')
 const app = express()
+const middlewareProva = require('./middlewareProva')
 
-const middlewareProva = (req, res, next) => {
-    const {method, url} = req
-    const time = new Date().getMinutes()
-    console.log(method, url, time)
-    next()
-}
+app.use(middlewareProva)
 
-app.get ('/', middlewareProva, (req, res)=>{
+app.get('/', (req, res)=>{
     res.send("homepage")
 })
 
-app.get ('/about', middlewareProva, (req, res)=>{
+app.get('/about', (req, res)=>{
     res.send("about")
+})
+
+app.get('/persone/ckemi', (req, res)=>{
+    res.send("ckemi robo")
+})
+
+app.get('/persone/hej', (req, res)=>{
+    res.send("hej robo")
 })
 
 app.listen(5000)
