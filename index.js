@@ -127,26 +127,28 @@
 
 // app.listen(5000)    
 
+
+// const middlewareProva = require('./middlewareProva')
+
+// app.use(middlewareProva)
+
+// app.get('/', (req, res)=>{
+//     res.send("homepage")
+// })
+
+// app.get('/about', (req, res)=>{
+//     res.send("about")
+// })
+
+// app.get('/persone/ckemi', (req, res)=>{
+//     res.send("ckemi robo")
+// })
+
+// app.get('/persone/hej', (req, res)=>{
+//     res.send("hej robo")
+// })
+
 const express = require('express')
 const app = express()
-const middlewareProva = require('./middlewareProva')
-
-app.use(middlewareProva)
-
-app.get('/', (req, res)=>{
-    res.send("homepage")
-})
-
-app.get('/about', (req, res)=>{
-    res.send("about")
-})
-
-app.get('/persone/ckemi', (req, res)=>{
-    res.send("ckemi robo")
-})
-
-app.get('/persone/hej', (req, res)=>{
-    res.send("hej robo")
-})
 
 app.listen(5000)
