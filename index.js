@@ -132,8 +132,9 @@ const app = express()
 
 const middlewareProva = (req, res, next) => {
     const {method, url} = req
-    const time = new Date().getMinutes
+    const time = new Date().getMinutes()
     console.log(method, url, time)
+    next()
 }
 
 app.get ('/', middlewareProva, (req, res)=>{
@@ -145,4 +146,3 @@ app.get ('/about', middlewareProva, (req, res)=>{
 })
 
 app.listen(5000)
-
