@@ -150,5 +150,10 @@
 
 const express = require('express')
 const app = express()
+const {persone} = require('./persone')
+
+app.get('/api/persone', (req,res)=>{
+    res.status(200).json({data : persone})
+})
 
 app.listen(5000)
