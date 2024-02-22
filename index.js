@@ -165,4 +165,8 @@ app.get('/api/persone/:id', (req,res)=>{
     res.json({success: true, data: persona})
 })
 
+app.post ('./api/persone', (req, res)=>{
+    console.log(req.body);
+})
+
 app.listen(5000)
