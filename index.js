@@ -174,4 +174,11 @@ app.post ('/api/persone', (req, res)=>{
     res.status(200).json({success: true, data : persone})
 })
 
+app.put('/api/persone/:id', (req, res)=>{
+    const {id} = req.params
+    const persona = req.body
+    persone[Number(id) - 1] = persona
+    res.status(200).json({success: true, data : persone})
+})
+
 app.listen(5000)
