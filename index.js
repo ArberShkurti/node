@@ -152,6 +152,8 @@ const express = require('express')
 const app = express()
 const {persone} = require('./persone')
 
+app.use(express.json())
+
 app.get('/api/persone', (req,res)=>{
     res.status(200).json({success: true, data : persone})
 })
@@ -165,8 +167,11 @@ app.get('/api/persone/:id', (req,res)=>{
     res.json({success: true, data: persona})
 })
 
-app.post ('./api/persone', (req, res)=>{
+app.post ('/api/persone', (req, res)=>{
     console.log(req.body);
+    const persona = req.body
+    persone.push(persona)
+    res.status(200).json({success: true, data : persone})
 })
 
 app.listen(5000)
