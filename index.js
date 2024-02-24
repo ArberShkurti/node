@@ -181,4 +181,12 @@ app.put('/api/persone/:id', (req, res)=>{
     res.status(200).json({success: true, data : persone})
 })
 
+app.delete('/api/persone/:id', (req, res) => {
+    const {id} = req.params
+    const index = persone.findIndex(persona => persona.id === id)
+    persone.splice(index,1)
+    res.status(200).json({success: true, data:persone})
+
+})
+
 app.listen(5000)
