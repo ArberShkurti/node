@@ -1,5 +1,4 @@
 
-
 // const numero = 3;
 
 // if ( numero < 3) {
@@ -13,7 +12,6 @@
 // for (i=0; i<10; i++){
 //  console.log((i));
 // }
-
 
 
 // const sayHi = require('./utilities')
@@ -152,11 +150,8 @@ const express = require('express')
 const app = express()
 const personeRouter = require('./routes/persone')
 
-
 app.use(express.json())
 
 app.use('/api/persone', personeRouter)
-
-
 
 app.listen(5000)
